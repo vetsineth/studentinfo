@@ -1,0 +1,51 @@
+<head>
+  <title>forminput</title>
+</head>
+
+<body>
+ <div>
+   {{>hello}}
+ </div>
+</body>
+<template name = "hello">
+  <form>
+      <div id="forminput">
+          <label for="usr">UserName:</label>
+          <input type="text" id="name" value={{txtname}}><br>
+          <input type="hidden" id="id" value="{{txtid}}">
+          <label for="pwd">Password.:</label>
+          <input type="password" id="pword" value="{{txtpassword}}"><br>
+          <label for="gender">Gender.....:</label>
+          <input type="text" id="gender" value="{{txtgender}}">
+      </div><br><br>
+      <button type="button"  id="btn-insert" class="btn btn-info">Insert</button>
+      <button type="button" class="btn btn-info btn-update">Update</button>
+
+      <li class="{{#if checked}}checked{{/if}}">
+     
+        <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+     
+        <span class="text">{{text}}</span>
+      </li>
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>UserName</th>
+          <th>password</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each EmailList}}
+           <tr>
+             <td>{{name}}</td>
+             <td>{{pword}}</td>
+             <td>{{gender}}</td>
+             <button  class="btn btn-danger btn-remove">Remove</button>
+              <button  class="btn btn-danger btn-edit">Edit</button>
+           </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </form>
+</template>
